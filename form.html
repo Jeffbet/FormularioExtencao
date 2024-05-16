@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formulário de Contato</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="index.js"></script>
+  
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+  <script type="text/javascript">
+    (function () {
+      emailjs.init("S5RfklHFLGRwjqngv");
+    })();
+  </script>
+</head>
+<body>
+  <div class="header"></div>
+  <div class="container border mt-3 bg-light">
+    <img src="LOGO_BELMONT.jpg" alt="Logo Belmont" class="logo">
+    <div class="row">
+      <div class="col-md-6 p-5 bg-primary text-white">
+        <h1>Olá!</h1>
+        <h4>
+          Sou assistente virtual das Lojas Belmont, responsável pelas assistências, tudo bem? 
+          <p></p>Por favor preencha o formulário ao lado e assim que possível responderemos sua solicitação.
+        </h4>
+      </div>
+      <div class="col-md-6 border-left py-3">
+        <h1>Formulário de Contato</h1>
+        <form id="contactForm">
+          <div class="form-group">
+            <label for="name">Nome</label>
+            <input type="text" class="form-control" id="name" placeholder="Informe seu nome">
+          </div>
+          <div class="form-group">
+            <label for="email">E-mail</label>
+            <input type="email" class="form-control" id="email" placeholder="Informe seu e-mail">
+          </div>
+          <div class="form-group">
+            <label for="cpf">CPF</label>
+            <input type="text" class="form-control" id="cpf" placeholder="Informe seu CPF">
+          </div>
+          <div class="form-group">
+            <label for="phone">Número do telefone</label>
+            <input type="text" class="form-control" id="phone" placeholder="Informe o número do pedido">
+          </div>
+          <div class="form-group">
+            <label for="number">Número do pedido</label>
+            <input type="text" class="form-control" id="pedido" placeholder="Informe o número do pedido">
+          </div>
+          <div class="form-group">
+            <label for="product">Nome do produto</label>
+            <input type="text" class="form-control" id="produto" placeholder="Informe o nome do produto">
+          </div>
+          <div class="form-group">
+            <label for="color">Cor do produto</label>
+            <input type="text" class="form-control" id="cor" placeholder="Informe a cor do produto">
+          </div>
+          <div class="form-group">
+            <label for="part">Qual a peça danificada?</label>
+            <input type="text" class="form-control" id="peça" placeholder="Informe qual a peça danificada">
+          </div>
+          <div class="form-group">
+            <label for="tipoProduto">Tipo de Produto:</label>
+            <div class="input-group">
+              <select class="custom-select" id="tipoProduto" name="tipoProduto">
+                <option value="moveis">Móveis</option>
+                <option value="sofa">Sofá</option>
+                <option value="colchoes">Colchões</option>
+                <option value="bases">Bases</option>
+                <option value="acessorios">Acessórios</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="message">Detalhe aqui o defeito do produto</label>
+            <textarea class="form-control" id="detalhes" rows="3" placeholder="Digite sua mensagem"></textarea>
+          </div>
+          <div class="form-group">
+            <label for="attachments">Anexe aqui (Fotos) do defeito no produto</label>
+            <input type="file" class="form-control-file" id="attachments" multiple>
+          </div>
+          <button type="button" class="btn btn-primary" onclick="sendMail()">Enviar</button>
+
+          <input type="hidden" name="redirectTo" value="http://127.0.0.1:5500/obrigado.html">
+
+          <div class="footer">
+            <p>
+              Garantia de colchões: 1 ano para defeito de fabricação, porém o tecido não pode estar sujo ou danificado.<br>
+              Garantia de sofá: 6 meses para defeito de fabricação, porém o tecido não pode estar sujo ou danificado.<br>
+              Garantia de móveis: 3 meses para defeito de fabricação.
+            </p>
+          </div>
+
+        </form>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
