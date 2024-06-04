@@ -3,7 +3,6 @@ function sendMail() {
   var email = document.getElementById("email").value;
   var cpf = document.getElementById("cpf").value;
   var phone = document.getElementById("phone").value;
-  //var pedido = document.getElementById("pedido").value;
   var produto = document.getElementById("produto").value;
   var cor = document.getElementById("cor").value;
   var peça = document.getElementById("peça").value;
@@ -12,7 +11,7 @@ function sendMail() {
   //var attachments = document.getElementById("attachments").files;
 
   // Verifica se todos os campos obrigatórios estão preenchidos
-  if (!name || !email || !cpf || !pedido || !produto || !cor || !peça || !tipoProduto || !detalhes) {
+  if (!name || !email || !cpf || !produto || !cor || !peça || !tipoProduto || !detalhes) {
       alert("Por favor, preencha todos os campos obrigatórios.");
       return;
   }
@@ -22,7 +21,6 @@ function sendMail() {
       email: email,
       cpf: cpf,
       phone: phone,
-      //pedido: pedido,
       produto: produto,
       cor: cor,
       peça: peça,
